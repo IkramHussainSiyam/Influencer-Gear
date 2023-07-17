@@ -10,36 +10,64 @@
   box-sizing: border-box;
 }
 
+/* ---- Variables ---- */
+:root {
+  /* --- fonts and typhography --- */
+  /* font family */
+  --heading-font: "noto serif", serif;
+  --sub-heading: "inter", sans-serif;
+  --body-text: "roboto", sans-serif;
+  /* font size */
+  --heading-font-size: 2.5rem;
+  --sub_heading-font-size: 3.5rem;
+  --sub_sub_heading-font-size: 1.75rem;
+  --body_text-font-size: 1rem;
+
+  /* --- colors --- */
+  --pink: hsla(338, 75%, 53%, 1);
+  --dark_gray: hsla(0, 0%, 18%, 1);
+  --dark_gray_light: hsla(0, 0%, 23%, 1);
+  --dark_blue: hsla(244, 65%, 9%, 1);
+  --linear_gradient: hsla(212, 26%, 80%, 0.1), hsla(212, 26%, 80%, 0.6),
+    hsla(212, 26%, 80%, 0.1);
+
+  /* --- other --- */
+  --border_radius: 0.5rem;
+  --btn-padding: 0.625rem 1.5rem;
+  --section-padding: 7.5rem;
+}
+
 /* ---- default stylings ---- */
 h1 {
-  font-family: "noto serif", serif;
+  font-family: var(--heading-font);
   font-weight: 700;
   line-height: 4rem;
-  font-size: 2.5rem;
-  color: #2f2f2f;
+  font-size: var(--heading-font-size);
+  color: var(--dark_gray);
 }
 h2 {
-  font-family: "inter", sans-serif;
+  font-family: var(--sub-heading);
   font-weight: 600;
-  font-size: 3.5rem;
-  color: #2f2f2f;
+  font-size: var(--sub_heading-font-size);
+  color: var(--dark_gray);
 }
 h3,
 h4 {
-  font-family: "inter", sans-serif;
+  font-family: var(--sub-heading);
   font-weight: 500;
-  font-size: 1.75rem;
-  color: #18191f;
+  font-size: var(--sub_sub_heading-font-size);
+  color: var(--dark_gray_light);
 }
 p,
 span {
-  font-family: "roboto", sans-serif;
+  font-family: var(--body-text);
   font-weight: normal;
-  font-size: 1rem;
-  color: #6C6B6B;
+  font-size: var(--body_text-font-size);
+  color: var(--dark_gray_light);
   line-height: 1.5rem;
 }
-ul, a {
+ul,
+a {
   list-style: none;
   text-decoration: none;
   color: initial;
@@ -49,16 +77,16 @@ img {
 }
 /* --- reusable classes --- */
 .btn {
-  padding: .625rem 1.5rem;
+  padding: var(--btn-padding);
   color: white;
-  background: #E02C6D;
-  border-radius: .3125rem;
+  background: var(--pink);
+  border-radius: var(--border_radius);
   cursor: pointer;
   outline: none;
   border: none;
 }
 .section-padding {
-  padding-block: 7.5rem;
+  padding-block: var(--section-padding);
 }
 .container {
   max-width: 1224px;
@@ -69,7 +97,7 @@ img {
   align-items: center;
 }
 
-/* --------------- Styling Starts From Here --------------- */
+/* -------------------- Styling Starts From Here -------------------- */
 /* ---------------------------
       Navbar Styling
 --------------------------- */
