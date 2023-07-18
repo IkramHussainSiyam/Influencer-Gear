@@ -137,7 +137,7 @@ a {
 }
 .nav-container ul li a {
   background-color: transparent;
-  padding: .5rem 0.75rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 0.3125rem;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
@@ -154,16 +154,26 @@ a {
 .menus .icon {
   font-size: 22px;
 }
+.hamburger {
+  display: none;
+}
 /* ---------------------------
       Hero Section Styling
 --------------------------- */
 .hero-container {
-  gap: 3.125rem;
+  gap: 5rem;
   justify-content: space-between;
-  background-image: url("../img/Circle\ design.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 760px center;
+}
+.hero-img {
+  position: relative;
+}
+.hero-img img {
+  width: 100%;
+}
+.hero-img .circle {
+  position: absolute;
+  left: -2.5rem;
+  z-index: -1;
 }
 .hero-content {
   max-width: 40rem;
@@ -230,7 +240,6 @@ a {
 .collections-box-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  justify-content: space-around;
   gap: 3.125rem;
   margin-bottom: 3.75rem;
 }
@@ -284,6 +293,7 @@ h4 {
   background-color: transparent;
   color: var(--pink);
   font-weight: 600;
+  padding: 0;
 }
 .collection-btn button:hover {
   background-color: transparent;
@@ -345,4 +355,94 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.hide {
+  display: none;
+}
+/* ---------------------------
+    Responsive Design
+--------------------------- */
+/* --- mobile --- */
+@media screen and (max-width: 640px) {
+  :root {
+    /* font size */
+    --h1-font-size: 2.2rem;
+    --h2-font-size: 2rem;
+    --h3-font-size: 1.5rem;
+    --h4-font-size: 1.25rem;
+    --body_text-font-size: 1rem;
+    --section-padding: 3.5rem;
+  }
+  .container {
+    max-width: auto;
+    margin: 0;
+    padding: 20px;
+  }
+  /* ---------------------------
+      navbar responsive
+  --------------------------- */
+  #navbar {
+    padding: 0.5rem 0;
+    margin-bottom: 2rem;
+  }
+  .nav-container ul li {
+    display: none;
+  }
+  .hamburger {
+    display: initial;
+  }
+  .nav-container .logo h2 {
+    font-size: 18px;
+  }
+  /* ---------------------------
+      hero section responsive
+  --------------------------- */
+  .hero-container {
+    flex-direction: column-reverse;
+    gap: 4rem;
+  }
+  .hero-img .circle {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+  }
+  /* ---------------------------
+      sponsor section responsive
+  --------------------------- */
+  .sponsor-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  /* ---------------------------------
+      collection section responsive
+  --------------------------------- */
+  .collection-container {
+    margin-bottom: 0;
+  }
+  .collections-box-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .collection-box {
+    width: auto;
+  }
+  /* ---------------------------------
+      collection section responsive
+  --------------------------------- */
+  .feature-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 5rem;
+  }
+  .feature-content h2 {
+    font-size: var(--h2-font-size);
+  }
+  .feature-content {
+    align-items: center;
+    justify-content: center;
+    /* margin-bottom: 1.25rem; */
+  }
+  .feature-img img {
+    width: 100%;
+  }
 }
