@@ -22,9 +22,10 @@
   --sub-heading: "inter", sans-serif;
   --body-text: "roboto", sans-serif;
   /* font size */
-  --heading-font-size:4rem;
-  --sub_heading-font-size: 2.3rem;
-  --sub_sub_heading-font-size: 1.75rem;
+  --h1-font-size: 4rem;
+  --h2-font-size: 2.3rem;
+  --h3-font-size: 1.75rem;
+  --h4-font-size: 1.5rem;
   --body_text-font-size: 1.125rem;
 
   /* --- colors --- */
@@ -35,7 +36,7 @@
 
   /* --- other --- */
   --border_radius: 0.5rem;
-  --btn-padding: .75rem 1.5rem;
+  --btn-padding: 0.75rem 1.5rem;
   --section-padding: 7.5rem;
 }
 
@@ -43,24 +44,30 @@
 h1 {
   font-family: var(--heading-font);
   font-weight: 700;
-  font-size: var(--heading-font-size);
+  font-size: var(--h1-font-size);
   color: var(--dark_gray);
 }
 h2 {
   font-family: var(--sub-heading);
   font-weight: 600;
-  font-size: var(--sub_heading-font-size);
+  font-size: var(--h2-font-size);
   color: var(--dark_gray);
 }
-h3,
-h4 {
+h3 {
   font-family: var(--sub-heading);
   font-weight: 500;
-  font-size: var(--sub_sub_heading-font-size);
+  font-size: var(--h3-font-size);
+  color: var(--dark_gray_light);
+}
+h4 {
+  font-family: var(--sub-heading);
+  font-weight: 400;
+  font-size: var(--h4-font-size);
   color: var(--dark_gray_light);
 }
 p,
-span {
+span,
+li {
   font-family: var(--body-text);
   font-weight: normal;
   font-size: var(--body_text-font-size);
@@ -142,7 +149,7 @@ a {
       Hero Section Styling
 --------------------------- */
 #hero-section {
-  background-image: url('../img/Circle\ design.svg');
+  background-image: url("../img/Circle\ design.svg");
   background-repeat: no-repeat;
   background-position: 69rem center;
 }
@@ -172,11 +179,68 @@ a {
 --------------------------- */
 .sponsors {
   padding-block: 3.125rem;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 .sponsor-container hr {
   width: 100%;
-  background: linear-gradient(135deg, rgba(192, 204, 218, 0.10) 0%, rgba(192, 204, 218, 0.60) 50.38%, rgba(192, 204, 218, 0.10) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(192, 204, 218, 0.1) 0%,
+    rgba(192, 204, 218, 0.6) 50.38%,
+    rgba(192, 204, 218, 0.1) 100%
+  );
   height: 0.0625rem;
   border: none;
+}
+/* ---------------------------
+    collection section styling
+--------------------------- */
+.collection-container h2 {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.collections-box-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-around;
+  gap: 3.125rem;
+  margin-bottom: 3.75rem;
+}
+.collection-box {
+  width: 23rem;
+  background: white;
+  border: 1px solid rgb(234, 234, 234);
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 0.8rem 0 rgba(0, 0, 0, 0.07);
+}
+.collection-box .box-img {
+  width: 100%;
+}
+.box-content {
+  padding: 1.5rem;
+}
+.box-content h3,
+h4 {
+  margin-bottom: 0.5rem;
+}
+.box-content .rating {
+  gap: 0.6rem;
+  margin-bottom: 0.3125rem;
+}
+.box-content .rating p {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #5e6366;
+}
+.box-content ul li {
+  line-height: 1.5rem;
+  font-size: 0.875rem;
+}
+.collection-btn {
+  text-align: right;
+}
+.collection-btn a {
+  color: var(--pink);
+  font-weight: 600;
 }
