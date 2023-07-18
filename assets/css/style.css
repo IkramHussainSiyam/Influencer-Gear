@@ -32,7 +32,7 @@
   --pink: hsla(338, 75%, 53%, 1);
   --dark_gray: hsla(0, 0%, 18%, 1);
   --dark_gray_light: hsla(0, 0%, 23%, 1);
-  --dark_blue: hsla(244, 65%, 9%, 1);
+  --dark_blue: hsl(246, 66%, 9%);
 
   /* --- other --- */
   --border_radius: 0.5rem;
@@ -112,7 +112,14 @@ a {
       Navbar Styling
 --------------------------- */
 #navbar {
-  padding: 2.5rem 0;
+  margin-bottom: 5rem;
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: hsla(0, 0%, 100%, 0.828);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #f2f2f2;
 }
 .nav-container {
   display: flex;
@@ -148,14 +155,13 @@ a {
 /* ---------------------------
       Hero Section Styling
 --------------------------- */
-#hero-section {
-  background-image: url("../img/Circle\ design.svg");
-  background-repeat: no-repeat;
-  background-position: 69rem center;
-}
 .hero-container {
   gap: 3.125rem;
   justify-content: space-between;
+  background-image: url("../img/Circle\ design.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 760px center;
 }
 .hero-content {
   max-width: 40rem;
@@ -238,11 +244,17 @@ h4 {
   font-size: 0.875rem;
 }
 .collection-btn {
-  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
-.collection-btn a {
+.collection-btn button {
+  background-color: transparent;
   color: var(--pink);
   font-weight: 600;
+}
+.collection-btn button:hover {
+  background-color: transparent;
 }
 /* ---------------------------
   Features section styling
@@ -264,5 +276,37 @@ h4 {
   max-width: 32rem;
 }
 .feature-content button {
-  border-radius: .25rem;
+  border-radius: 0.25rem;
+}
+
+/* ---------------------------
+  Footer section styling
+--------------------------- */
+#footer {
+  background: var(--dark_blue);
+  margin-top: 7.5rem;
+}
+.footer-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+}
+.footer-container > h3,
+.footer-container > p {
+  color: rgb(218, 218, 218);
+}
+.social-icon {
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+.icons {
+  background-color: hsl(240, 27%, 20%);
+  color: rgb(218, 218, 218);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
